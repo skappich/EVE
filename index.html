@@ -23,12 +23,7 @@
 				
 				function TestFunktion(){
 					alert(navigator.notification);
-					navigator.notification.confirm(
-    				'Melde jetzt deine Einsatzbereitschaft!',  // message
-    				doNothing,         // callback
-    				'Es gibt Arbeit!',            // title
-    				'Done'                  // buttonName
-					);
+					notificationManager.createNotification("HTML5 Notification!", "Hello from the website!");
 					navigator.notification.beep();
 					navigator.notification.vibrate(1000);
 				}
