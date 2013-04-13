@@ -22,7 +22,7 @@
 				}
 				
 				function TestFunktion(){
-					alert(navigator.notification);
+					alert(navigator.appName + '\n' + navigator.appVersion);
 					notificationManager.createNotification("HTML5 Notification!", "Hello from the website!");
 					navigator.notification.beep();
 					navigator.notification.vibrate(1000);
