@@ -15,6 +15,17 @@
 					sessionStorage.valocation = $(obj).children("p:last-child").text();
 					sessionStorage.va = va;
 				}
+				
+				function TestFunktion(){
+					navigator.notification.alert(
+    				'Melde jetzt deine Einsatzbereitschaft!',  // message
+    				,         // callback
+    				'Es gibt Arbeit!',            // title
+    				'Done'                  // buttonName
+					);
+					navigator.notification.beep(2);
+					navigator.notification.vibrate(1000);
+				}
 			</script>
 			
 	</head>
@@ -111,7 +122,7 @@
             <li><a href="#JobDetails" data-transition="flow" data-position-to="window" data-rel="popup">Details anzeigen</a></li>
             <li><a href="#JobStatusChange" data-transition="flow" data-position-to="window" data-rel="popup">Status ändern</a></li>
             <li><a href="#" target="new" onClick="this.href='https://maps.google.de/maps?q='+sessionStorage.valocation">Navigation</a></li>
-            <li><a href="#" onClick="navigator.notification.beep(2);">Deligieren</a></li>
+            <li><a href="#" onClick="TestFunktion()">Deligieren</a></li>
         	</ul>
 				</div>
 				<div data-role="popup" id="JobDetails" data-theme="a"  data-dismissible="false">
