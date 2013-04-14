@@ -173,7 +173,13 @@
 				</div>
 		</div>
 		<script type="text/javascript" charset="utf-8" >
-			showNotification();
+			document.addEventListener("deviceready", onDeviceReady, false);
+
+    // Cordova is ready
+    //
+    function onDeviceReady() {
+        navigator.splashscreen.show();
+    }
 		</script>
 	</body>
 </html>
