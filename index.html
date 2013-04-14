@@ -36,12 +36,13 @@
 				}
 			
 				function webkitNotification(){
-					/*if (window.webkitNotifications.checkPermission() > 0) {
+					alert(window.webkitNotifications.checkPermission());
+					if (window.webkitNotifications.checkPermission() > 0) {
 						RequestPermission(showNotification);
 					}
-					else {*/
+					else {
 						window.webkitNotifications.createNotification("", "Title", "Body").show(); 
-					/*}*/
+					}
 				}
 			
 				function mozNotification() {
@@ -147,7 +148,7 @@
             <li><a href="#JobDetails" data-transition="flow" data-position-to="window" data-rel="popup">Details anzeigen</a></li>
             <li><a href="#JobStatusChange" data-transition="flow" data-position-to="window" data-rel="popup">Status ändern</a></li>
             <li><a href="#" target="new" onClick="this.href='https://maps.google.de/maps?q='+sessionStorage.valocation">Navigation</a></li>
-            <li><a href="#" onClick="showNotification()">Deligieren</a></li>
+            <li><a id="TestButton" href="#" onClick="showNotification()">Deligieren</a></li>
         	</ul>
 				</div>
 				<div data-role="popup" id="JobDetails" data-theme="a"  data-dismissible="false">
@@ -171,6 +172,8 @@
 					</form>
 				</div>
 		</div>
-		
+		<script type="text/javascript" charset="utf-8" >
+			showNotification();
+		</script>
 	</body>
 </html>
