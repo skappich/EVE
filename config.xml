@@ -22,10 +22,10 @@
 	<preference name="orientation" value="landscape" />
 
 	<icon src="icon.png" gap:role="default" />
-	<icon src="res/drawable/ldpi.png" gap:platform="android" gap:density="ldpi" />
-	<icon src="res/drawable/mdpi.png" gap:platform="android" gap:density="mdpi" />
-	<icon src="res/drawable/hdpi.png" gap:platform="android" gap:density="hdpi" />
-	<icon src="res/drawable/xhdpi.png" gap:platform="android" gap:density="xhdpi" />
+	<gap:splash src="res/drawable/ldpi.png" gap:platform="android" gap:density="ldpi" />
+	<gap:splash src="res/drawable/mdpi.png" gap:platform="android" gap:density="mdpi" />
+	<gap:splash src="res/drawable/hdpi.png" gap:platform="android" gap:density="hdpi" />
+	<gap:splash src="res/drawable/xhdpi.png" gap:platform="android" gap:density="xhdpi" />
 
 	<!-- sample preference specification -->
 	<!-- <preference name="autorotate" value="false" readonly="true"/> -->
