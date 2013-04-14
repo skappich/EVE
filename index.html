@@ -22,6 +22,7 @@
 				}
 				
 				function TestFunktion(){
+					var notificationManager = navigator.mozNotification || navigator.webkitNotification;
 					alert(navigator.appName + '\n' + navigator.appVersion);
 					notificationManager.createNotification("HTML5 Notification!", "Hello from the website!");
 					navigator.notification.beep();
