@@ -35,13 +35,13 @@
 				}
 			
 				function webkitNotification(){
-					if (window.webkitNotifications.checkPermission() > 0) {
+					/*if (window.webkitNotifications.checkPermission() > 0) {
 						RequestPermission(showNotification);
 					}
-					else {
+					else {*/
 						window.webkitNotifications.createNotification("http://a1.twimg.com/profile_images/710503034/lillypad_rss_normal.png", "Title", 
 						"Body").show(); 
-					}
+					/*}*/
 				}
 			
 				function mozNotification() {
