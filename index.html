@@ -17,18 +17,40 @@
 					sessionStorage.va = va;
 				}
 				
-				function doNothing(){
-					
+				function RequestPermission (callback) {
+					window.webkitNotifications.requestPermission(callback);
+				}
+			
+				function showNotification() {
+					alert();
+					alert(window.webkitNotifications);
+					if (window.webkitNotifications)
+					{
+						webkitNotification();
+					}
+					else if (navigator.mozNotification)
+					{
+						mozNotification();
+					}
+				}
+			
+				function webkitNotification(){
+					if (window.webkitNotifications.checkPermission() > 0) {
+						RequestPermission(showNotification);
+					}
+					else {
+						window.webkitNotifications.createNotification("http://a1.twimg.com/profile_images/710503034/lillypad_rss_normal.png", "Title", 
+						"Body").show(); 
+					}
+				}
+			
+				function mozNotification() {
+					var notification = navigator.mozNotification.createNotification(
+      	  "Hey, check this out!", "This is a notification posted by " +
+      	  "Firefox 4. You should take some action. Right now!");
+					notification.show();
 				}
 				
-				function TestFunktion(){
-					var notificationManager = navigator.mozNotification || navigator.webkitNotification;
-					alert(notificationManager);
-					var notification = notificationManager.createNotification("HTML5 Notification!", "Hello from the website!");
-					notification.show();
-					navigator.notification.beep();
-					navigator.notification.vibrate(1000);
-				}
 			</script>
 			
 	</head>
@@ -125,7 +147,7 @@
             <li><a href="#JobDetails" data-transition="flow" data-position-to="window" data-rel="popup">Details anzeigen</a></li>
             <li><a href="#JobStatusChange" data-transition="flow" data-position-to="window" data-rel="popup">Status ändern</a></li>
             <li><a href="#" target="new" onClick="this.href='https://maps.google.de/maps?q='+sessionStorage.valocation">Navigation</a></li>
-            <li><a href="#" onClick="TestFunktion()">Deligieren</a></li>
+            <li><a href="#" onClick="showNotification()">Deligieren</a></li>
         	</ul>
 				</div>
 				<div data-role="popup" id="JobDetails" data-theme="a"  data-dismissible="false">
